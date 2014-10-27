@@ -1,5 +1,5 @@
 === WPML Translation Check ===
-Contributors: debelop, gcomes
+Contributors: debelop, gcomes, gabidimartino
 Donate link: http://www.debelop.com/wpml-translation-check
 Tags: wpml, language, multi-language, translation, translated, check
 Requires at least: 3.5
