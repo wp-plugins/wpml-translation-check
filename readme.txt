@@ -1,9 +1,10 @@
 === WPML Translation Check ===
-    
+Contributors: debelop, gcomes
+Donate link: http://www.debelop.com/wpml-translation-check
 Tags: wpml, language, multi-language, translation, translated, check
-Requires at least: 3.0.1
-Tested up to: 3.9.2
-Stable tag: trunk
+Requires at least: 3.5
+Tested up to: 4.0
+Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
