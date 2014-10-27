@@ -4,7 +4,7 @@ Donate link: http://www.debelop.com/wpml-translation-check
 Tags: wpml, language, multi-language, translation, translated, check
 Requires at least: 3.5
 Tested up to: 4.0
-Stable tag: 1.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -70,6 +70,9 @@ The version on WordPress.org can only check the last 50 posts. If you would like
 2. Detection results
 
 == Changelog ==
+
+= 1.0.1 =
+* Fix WPML plugin detection
 
 = 1.0 =
 * Initial version.
