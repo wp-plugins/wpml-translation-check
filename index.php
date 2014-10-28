@@ -4,7 +4,7 @@
  * Plugin URI: http://www.debelop.com/wpml-translation-check
  * Description: Detects the language of your posts, allowing to check the status of your translations at a glance.
  * Author: Debelop
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author URI: http://debelop.com
  */
 
@@ -17,8 +17,8 @@ function dtc_setup_options()
     if (version_compare(get_bloginfo('version'), '3.1', '<')) {
         wp_die("You must update WordPress to use this plugin!");
     }
-    if (!is_plugin_active('sitepress-multilingual-cms/plugin.php')) {
-        wp_die("You must have the WPML plugin installed in order to use this plugin!");
+    if (!defined('ICL_SITEPRESS_VERSION')) {
+        wp_die("You must have the WPML plugin installed and active in order to use this plugin!");
     }
     if (get_option('dtc_options') === false) {
         $options = array(
