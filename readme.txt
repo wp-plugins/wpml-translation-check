@@ -1,10 +1,10 @@
 === WPML Translation Check ===
 Contributors: debelop, gcomes, gabidimartino
 Donate link: http://www.debelop.com/wpml-translation-check
-Tags: wpml, language, multi-language, translation, translated, check
+Tags: wpml, language, multi-language, translation, translated, content, post, post-type, check, management, verify, detection
 Requires at least: 3.5
 Tested up to: 4.0
-Stable tag: 1.0.2
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -70,6 +70,9 @@ The version on WordPress.org can only check the last 50 posts. If you would like
 2. Detection results
 
 == Changelog ==
+
+= 1.1 =
+* After first check, subsequent checks trigger a page load to retrieve latest content
 
 = 1.0.2 =
 * Better WPML plugin detection

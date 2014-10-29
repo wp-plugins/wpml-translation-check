@@ -100,14 +100,12 @@ if ($postType) {
 
 </div>
 
-<form class="frm-check" method="POST" action="">
+<form id="frm-check" class="frm-check" method="POST">
     <input type="submit" class="button-primary submit" value="Check now" />
-
+	<input type="hidden" name="autocheck" value="1" />
     <span class="progress" style="display:none">
     &nbsp;Detecting languages, please wait&hellip; <br><img src="<?php echo plugins_url('img/ajax-loader.gif', dirname(__FILE__)) ?>" alt="loading" />
     </span>
-
-
 </form>
 
 
@@ -166,12 +164,10 @@ if ($postType) {
 
 var minProb = <?php echo DTC_MIN_PROB ?>;
 var textsToDetect = <?php echo json_encode($txts->getTexts()) ?>;
+var reload = false;
 
-(function ($) {
-
-$('.frm-check').on('submit', function (e) {
-
-   var $f = $(this),
+function checkTranslations($) {
+   var $f = $("#frm-check"),
        $progress = $f.find('.progress'),
        $error = $('.dtc-error'),
        $legend = $("#dtc-legend"),
@@ -182,13 +178,13 @@ $('.frm-check').on('submit', function (e) {
     $t.find('td').removeClass('detection-warning detection-success detection-error');
     $t.find('span.detection').remove();
 
-
     var data = {
       'action': 'send_texts',
       'texts': textsToDetect
     };
 
     $.post(ajaxurl, data, function(response) {
+    	reload = true;
         $progress.hide();
         if (response.success) {
             var data = response.data;
@@ -219,9 +215,19 @@ $('.frm-check').on('submit', function (e) {
             $error.html('<p>ERROR: '+response.msg+'</p>').show();
         }
     }, 'json');
-    return false;
+}
 
+(function ($) {
+
+$('.frm-check').on('submit', function (e) {
+	if (reload) return true;
+	checkTranslations($);
+    return false;
 });
+
+if (<?php echo !empty($_POST['autocheck']) ? 'true' : 'false' ?>) {
+	checkTranslations($);
+}
 
 }(jQuery));
 </script>
