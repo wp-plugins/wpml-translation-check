@@ -86,6 +86,9 @@ if ($postType) {
 <?php endforeach ?>
 </h2>
 
+<p>This page shows an overview of your content (primary language and translations).
+</br> Please click on <b>Detect language</b> to perform the language detection on your content.</p>
+
 <div id="dtc-legend" style="display:none">
 <table border="0" cellpadding="8" cellspacing="0" class="dtc-legend"><tr>
 <td>Language match</td>
@@ -100,8 +103,8 @@ if ($postType) {
 
 </div>
 
-<form id="frm-check" class="frm-check" method="POST">
-    <input type="submit" class="button-primary submit" value="Check now" />
+<form class="frm-check" method="POST">
+    <input type="submit" class="button button-primary button-hero submit" value="Detect language" />
 	<input type="hidden" name="autocheck" value="1" />
     <span class="progress" style="display:none">
     &nbsp;Detecting languages, please wait&hellip; <br><img src="<?php echo plugins_url('img/ajax-loader.gif', dirname(__FILE__)) ?>" alt="loading" />
@@ -158,6 +161,15 @@ if ($postType) {
 
 </table>
 
+<form class="frm-check" method="POST">
+    <input type="submit" class="button button-primary button-hero submit" value="Detect language" />
+	<input type="hidden" name="autocheck" value="1" />
+    <span class="progress" style="display:none">
+    &nbsp;Detecting languages, please wait&hellip; <br><img src="<?php echo plugins_url('img/ajax-loader.gif', dirname(__FILE__)) ?>" alt="loading" />
+    </span>
+</form>
+
+
 </div>
 
 <script type="text/javascript">
@@ -167,7 +179,7 @@ var textsToDetect = <?php echo json_encode($txts->getTexts()) ?>;
 var reload = false;
 
 function checkTranslations($) {
-   var $f = $("#frm-check"),
+   var $f = $(".frm-check"),
        $progress = $f.find('.progress'),
        $error = $('.dtc-error'),
        $legend = $("#dtc-legend"),

@@ -4,11 +4,11 @@ Donate link: http://www.debelop.com/wpml-translation-check
 Tags: wpml, language, multi-language, translation, translated, content, post, post-type, check, management, verify, detection
 Requires at least: 3.5
 Tested up to: 4.0
-Stable tag: 1.1
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This plugin for WPML enabled sites allows you easily perform a language check on your translated content.
+This plugin for WPML enabled sites allows you to easily perform a language check (including language detection) on your translated content.
 
 == Description ==
 
@@ -70,6 +70,9 @@ The version on WordPress.org can only check the last 50 posts. If you would like
 2. Detection results
 
 == Changelog ==
+
+= 1.1.1 =
+* Small style/usability changes
 
 = 1.1 =
 * After first check, subsequent checks trigger a page load to retrieve latest content
