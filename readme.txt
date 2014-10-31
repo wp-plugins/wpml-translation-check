@@ -31,7 +31,7 @@ Thus, you can see visually which products in their Spanish version have an Engli
 = Docs & Support =
 
 If you were unable to find the answer to your question on the FAQ or in any of the documentation, you should check the support forum on WordPress.org. If you can't locate any topics that pertain to your particular issue, post a new topic for it.
-	
+
 = Pro version =
 
 The version of our language detection program on WordPress.org can only consult 50 posts because of performance reasons. If you would like to remove this limitation go to: http://www.debelop.com/wpml-translation-check.

@@ -105,12 +105,11 @@ if ($postType) {
 
 <form class="frm-check" method="POST">
     <input type="submit" class="button button-primary button-hero submit" value="Detect language" />
-	<input type="hidden" name="autocheck" value="1" />
+    <input type="hidden" name="autocheck" value="1" />
     <span class="progress" style="display:none">
     &nbsp;Detecting languages, please wait&hellip; <br><img src="<?php echo plugins_url('img/ajax-loader.gif', dirname(__FILE__)) ?>" alt="loading" />
     </span>
 </form>
-
 
 <div class="error dtc-error" style="display:none"></div>
 
@@ -120,10 +119,10 @@ if ($postType) {
 <table border="0" cellpadding="8" cellspacing="0" id="dtc-content" class="wp-list-table widefat">
 <thead>
 <tr>
-	<th scope="col"><?php echo $languages[$defaultLang] ?> </th>
-	<?php foreach ($translatedLangs as $k => $v) : ?>
-	<th scope="col"><?php echo $v ?></th>
-	<?php endforeach ?>
+    <th scope="col"><?php echo $languages[$defaultLang] ?> </th>
+    <?php foreach ($translatedLangs as $k => $v) : ?>
+    <th scope="col"><?php echo $v ?></th>
+    <?php endforeach ?>
 </tr>
 </thead>
 
@@ -133,10 +132,10 @@ if ($postType) {
     if ($detectDefaultLang) $txts->addContent($postId, $post['title'], $post['content']);
 ?>
 <tr <?php echo $i % 2 == 0 ? 'class="alternate"' : '' ?>>
-	<td id="post-<?php echo $postId ?>" data-lang="<?php echo $defaultLang ?>">
-		<a href="<?php echo get_edit_post_link($postId) ?>"><?php echo ($post['title']) ?></a>
-	</td>
-	<?php foreach ($translatedLangs as $lang => $langName) :
+    <td id="post-<?php echo $postId ?>" data-lang="<?php echo $defaultLang ?>">
+        <a href="<?php echo get_edit_post_link($postId) ?>"><?php echo ($post['title']) ?></a>
+    </td>
+    <?php foreach ($translatedLangs as $lang => $langName) :
         $exists = !empty($translations[$postId][$lang]) && isset($posts[$translations[$postId][$lang]]);
         if ($exists):
 
@@ -150,11 +149,11 @@ if ($postType) {
         if (!$transPost['content']) echo ' <span class="missing">empty</span>';
         //else echo '<br/><small>' . wp_trim_words($transPost['content'], 10, '') . '</small>';
     ?>
-	 </td>
+    </td>
    <?php else: ?>
    <td><span class="missing">missing</span></td>
    <?php endif; ?>
-	<?php endforeach ?>
+    <?php endforeach ?>
 </tr>
 <?php endforeach ?>
 
@@ -163,7 +162,7 @@ if ($postType) {
 
 <form class="frm-check" method="POST">
     <input type="submit" class="button button-primary button-hero submit" value="Detect language" />
-	<input type="hidden" name="autocheck" value="1" />
+    <input type="hidden" name="autocheck" value="1" />
     <span class="progress" style="display:none">
     &nbsp;Detecting languages, please wait&hellip; <br><img src="<?php echo plugins_url('img/ajax-loader.gif', dirname(__FILE__)) ?>" alt="loading" />
     </span>
@@ -179,11 +178,11 @@ var textsToDetect = <?php echo json_encode($txts->getTexts()) ?>;
 var reload = false;
 
 function checkTranslations($) {
-   var $f = $(".frm-check"),
-       $progress = $f.find('.progress'),
-       $error = $('.dtc-error'),
-       $legend = $("#dtc-legend"),
-       $t = $('#dtc-content');
+    var $f = $(".frm-check"),
+        $progress = $f.find('.progress'),
+        $error = $('.dtc-error'),
+        $legend = $("#dtc-legend"),
+        $t = $('#dtc-content');
 
     $progress.show();
     $error.hide();
@@ -196,7 +195,7 @@ function checkTranslations($) {
     };
 
     $.post(ajaxurl, data, function(response) {
-    	reload = true;
+        reload = true;
         $progress.hide();
         if (response.success) {
             var data = response.data;
@@ -232,13 +231,13 @@ function checkTranslations($) {
 (function ($) {
 
 $('.frm-check').on('submit', function (e) {
-	if (reload) return true;
-	checkTranslations($);
+    if (reload) return true;
+    checkTranslations($);
     return false;
 });
 
 if (<?php echo !empty($_POST['autocheck']) ? 'true' : 'false' ?>) {
-	checkTranslations($);
+    checkTranslations($);
 }
 
 }(jQuery));
